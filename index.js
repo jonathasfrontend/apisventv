@@ -11,11 +11,7 @@ const Esportes = require('./models/esports')
 const port = 3000;
 const app = express();
 
-const corsOptions = {
-  origin: 'https://sventv.vercel.app/',
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 require('dotenv').config();
 app.use( bodyParser.json() );
