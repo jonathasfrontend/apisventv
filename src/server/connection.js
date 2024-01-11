@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 
 function ConnectBD(){
-  mongoose.connect(process.env.LINK_CONNECTION_MONGODB)
+  mongoose.connect('mongodb+srv://root:dFrPbwloK4qEAnKy@cluster0.xvdlp.mongodb.net/tvchannels?retryWrites=true&w=majority')
   .then(()=>{console.log("Banco de dados conectado!")})
   .catch(()=>{console.log("Falha ao conectar com o banco!")});
 }
