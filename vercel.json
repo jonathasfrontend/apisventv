@@ -1,15 +1,29 @@
 {
-     "version": 2,
-     "builds": [
-       {
-         "src": "src/index.js",
-         "use": "@vercel/node"
-       }
-     ],
-     "routes": [
-       { "src": "/(.*)", "dest": "/src/$1" },
-       { "handle": "filesystem" },
-       { "src": "/(.*)", "status": 404, "dest": "404.html" }
-     ]
-   }
-   
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites":  [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404, "dest":
+      "404.html"
+    }
+  ]
+}
