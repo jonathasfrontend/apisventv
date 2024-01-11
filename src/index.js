@@ -10,7 +10,7 @@ app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({ extended: true }) );
 app.set('view engine', 'html');
 
-app.use('/content/v1', require('./routes/main'));
+app.use('', require('./routes/main'));
 
 ConnectBD
 

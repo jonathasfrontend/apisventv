@@ -7,7 +7,7 @@ const Variedades = require('../models/variedades')
 const Esportes = require('../models/esports')
 const Bbb_24 = require('../models/bbb')
 
-router.get('/filmes', async (req, res) => {
+router.get('/content/v1/filmes', async (req, res) => {
   try {
     const [filmes] = await Promise.all([
       Filme.find(),
@@ -23,7 +23,7 @@ router.get('/filmes', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.get('/filmes/:id', async (req, res) => {
+router.get('/content/v1/filmes/:id', async (req, res) => {
   try {
     const filme = await Filme.findById(req.params.id);
     if (!filme) {
@@ -39,7 +39,7 @@ router.get('/filmes/:id', async (req, res) => {
   }
 })
 
-router.get('/desenhos', async (req, res) => {
+router.get('/content/v1/desenhos', async (req, res) => {
   try {
     const [desenhos] = await Promise.all([
       Desenhos.find(),
@@ -55,7 +55,7 @@ router.get('/desenhos', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.get('/desenhos/:id', async (req, res) => {
+router.get('/content/v1/desenhos/:id', async (req, res) => {
   try {
     const desenhos = await Desenhos.findById(req.params.id);
     if (!desenhos) {
@@ -71,7 +71,7 @@ router.get('/desenhos/:id', async (req, res) => {
   }
 })
 
-router.get('/variedades', async (req, res) => {
+router.get('/content/v1/variedades', async (req, res) => {
   try {
     const [variedades] = await Promise.all([
       Variedades.find(),
@@ -87,7 +87,7 @@ router.get('/variedades', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.post('/variedades', async (req, res) => {
+router.post('/content/v1/variedades', async (req, res) => {
   try {
     const { title, link, image } = req.body;
 
@@ -111,7 +111,7 @@ router.post('/variedades', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.get('/variedades/:id', async (req, res) => {
+router.get('/content/v1/variedades/:id', async (req, res) => {
   try {
     const variedades = await Variedades.findById(req.params.id);
     if (!variedades) {
@@ -126,7 +126,7 @@ router.get('/variedades/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.delete('/variedades/:id', async (req, res) => {
+router.delete('/content/v1/variedades/:id', async (req, res) => {
   try {
     const deletedVariedade = await Variedades.findByIdAndDelete(req.params.id);
 
@@ -141,7 +141,7 @@ router.delete('/variedades/:id', async (req, res) => {
   }
 });
 
-router.get('/esportes', async (req, res) => {
+router.get('/content/v1/esportes', async (req, res) => {
   try {
     const [esportes] = await Promise.all([
       Esportes.find(),
@@ -157,7 +157,7 @@ router.get('/esportes', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.get('/esportes/:id', async (req, res) => {
+router.get('/content/v1/esportes/:id', async (req, res) => {
   try {
     const esportes = await Esportes.findById(req.params.id);
     if (!esportes) {
@@ -174,7 +174,7 @@ router.get('/esportes/:id', async (req, res) => {
 })
 
 
-router.get('/bbb', async (req, res) => {
+router.get('/content/v1/bbb', async (req, res) => {
   try {
     const [bbb] = await Promise.all([
       Bbb_24.find(),
@@ -190,7 +190,7 @@ router.get('/bbb', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.get('/bbb/:id', async (req, res) => {
+router.get('/content/v1/bbb/:id', async (req, res) => {
   try {
     const bbb = await Bbb_24.findById(req.params.id);
     if (!bbb) {
@@ -205,7 +205,7 @@ router.get('/bbb/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.post('/bbb', async (req, res) => {
+router.post('/content/v1/bbb', async (req, res) => {
   try {
     const { title, link, image } = req.body;
 
@@ -229,7 +229,7 @@ router.post('/bbb', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
-router.delete('/bbb/:id', async (req, res) => {
+router.delete('/content/v1/bbb/:id', async (req, res) => {
   try {
     const deletedBbb = await Bbb_24.findByIdAndDelete(req.params.id);
 
@@ -244,7 +244,7 @@ router.delete('/bbb/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
-router.put('/bbb/:id', async (req, res) => {
+router.put('/content/v1/bbb/:id', async (req, res) => {
   const itemId = req.params.id;
 
   try {
