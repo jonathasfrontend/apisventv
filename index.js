@@ -267,9 +267,6 @@ app.put('/content/v1/bbb/:id', async (req, res) => {
   }
 });
 
-
-// app.use('', require('./routes/main'));
-
 ConnectBD
 
 app.listen(process.env.PORT || port,()=>{
