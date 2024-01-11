@@ -6,24 +6,20 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites":  [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/src/$1"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/src/$1"
-    },
     {
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "status": 404, "dest":
-      "404.html"
+      "status": 404,
+      "dest": "404.html"
     }
   ]
 }
