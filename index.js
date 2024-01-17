@@ -5,10 +5,10 @@ const Esportes = require('./models/esports')
 const Bbb_24 = require('./models/bbb')
 
 const ConnectBD = require('./server/connection')
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 3000;
 const app = express();
 
 app.use(cors());
@@ -267,8 +267,13 @@ app.put('/content/v1/bbb/:id', async (req, res) => {
   }
 });
 
+app.use((req, res, next) => {
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
+});
+
 ConnectBD
 
+const port = 3000;
 app.listen(process.env.PORT || port,() => {
     console.log(`Aplicação rodando, porta:${port}`);
 })
