@@ -269,6 +269,6 @@ app.put('/content/v1/bbb/:id', async (req, res) => {
 
 ConnectBD
 
-app.listen(process.env.PORT || port,()=>{
+app.listen(process.env.PORT || port,() => {
     console.log(`Aplicação rodando, porta:${port}`);
 })
